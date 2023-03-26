@@ -1,0 +1,6 @@
+{
+  "dependencies": {
+    "react-iframe": "^1.8.5",
+    "react-router-dom": "^6.9.0"
+  }
+}

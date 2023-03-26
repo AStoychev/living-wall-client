@@ -1,0 +1,124 @@
+.furnitures_section {
+  width: 100%;
+  float: left;
+  padding-bottom: 90px;
+}
+
+.our_text {
+  width: 100%;
+  float: left;
+  font-size: 36px;
+  color: #121111;
+  text-transform: uppercase;
+  text-align: center;
+}
+
+.ipsum_text {
+  width: 100%;
+  float: left;
+  font-size: 16px;
+  color: #090808;
+  text-align: center;
+  margin-left: 0px;
+  margin-top: 10px;
+}
+
+.furnitures_section2 {
+  width: 100%;
+  float: left;
+}
+
+.container_main {
+  position: relative;
+  width: 100%;
+  max-width: 100%;
+}
+
+a:hover {
+  color: #fff;
+  text-decoration: underline;
+}
+
+.image {
+  display: block;
+  width: 582px;
+  height: 300px;
+  /* width: 100%;
+  height: auto; */
+}
+
+
+.overlay {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 60%;
+  width: 42%;
+  opacity: 0;
+  transition: .3s ease;
+  background-color: #16e816;
+  /* background-color: #cf950e; */
+  margin: 0 auto;
+  border-radius: 100px;
+  top: 55px;
+}
+
+
+.container_main:hover .overlay {
+  opacity: 1;
+}
+
+.icon {
+  color: white;
+  font-size: 100px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  text-align: center;
+}
+
+.fa-user:hover {
+  color: #eee;
+}
+
+.temper_text {
+  width: 100%;
+  float: left;
+  font-size: 18px;
+  color: #16e816;
+  text-transform: uppercase;
+  font-weight: bold;
+  padding-top: 35px;
+}
+
+.dololr_text {
+  width: 100%;
+  float: left;
+  font-size: 18px;
+  color: #121111;
+  margin-top: 10px;
+  margin-left: 0px;
+}
+
+.addButton {
+  padding-bottom: 10px;
+  text-align: center;
+  margin: auto;
+  display: flex;
+  background-color: white;
+}
+
+.addButtonImage {
+  width: 200px;
+  height: 80px;
+}
+
+.addButton:hover {
+  transform: scale(1.3, 1.3);
+  -webkit-transform: scale(1.3, 1.3);
+  -moz-transform: scale(1.3, 1.3);
+}
