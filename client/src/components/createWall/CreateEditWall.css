@@ -91,6 +91,7 @@ label[for="female"] {
 input[type="nickname"],
 input[type="category"],
 input[type="price"],
+input[type="url"],
 input[type="number"],
 input[type="title"],
 /* input[type="description"] */

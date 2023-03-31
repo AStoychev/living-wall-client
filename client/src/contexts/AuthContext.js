@@ -6,11 +6,19 @@ import { authServiceFactory } from '../services/authService';
 
 export const AuthContext = createContext();
 
+// Handling
+
+// Handling
+
 export const AuthProvider = ({
     children,
 }) => {
     const [auth, setAuth] = useLocalStorage('auth', {});
     const navigate = useNavigate();
+
+    // Try error
+    const [errors, setError] = useState({});
+    // Try error
 
     const authService = authServiceFactory(auth.accessToken);
 
@@ -20,10 +28,12 @@ export const AuthProvider = ({
             setAuth(result);
             navigate('/catalog');
 
-        } catch(error) {
+        } catch (error) {
             console.log('There is a problem')
+            console.error(11111, error)
         }
     };
+    
 
     const onRegisterSubmit = async (values) => {
         const { confirmPassword, ...registerData } = values;
@@ -38,16 +48,22 @@ export const AuthProvider = ({
 
             navigate('/catalog');
 
-        } catch(error) {
+        } catch (error) {
             console.log('There is a problem')
         }
+
     };
 
     const onLogout = async () => {
         await authService.logout();
-        
+
         setAuth({});
+
+        // Try logout
+        localStorage.removeItem('auth');
+        // Try logout
     };
+    
     const contextValues = {
         onLoginSubmit,
         onRegisterSubmit,

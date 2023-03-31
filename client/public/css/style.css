@@ -287,6 +287,19 @@ button {
      font-family: "Cursive"
 }
 
+.nav-link-span:hover {
+     padding-top: 10px;
+     padding: 10px;
+     width: 90px;
+     margin: 0px 30px;
+     color: #33f033;
+     font-size: 22px;
+     line-height: 20px;
+     font-weight: 510;
+     /* text-transform: uppercase; */
+     font-family: "Cursive"
+}
+
 .navigation.navbar-dark .navbar-nav .nav-link:focus,
 .navigation.navbar-dark .navbar-nav .nav-link:hover {
      color: #33f033;

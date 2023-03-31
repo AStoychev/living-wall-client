@@ -1,0 +1,13 @@
+{
+    "walls": [
+        {
+            "_id": 1,
+            "title": "Moss Living Wall",
+            "category": "Wall",
+            "price": 100,
+            "imageUrl": "https://naturahq.com/wp-content/uploads/2020/06/JLL-Crabtree-Terrace-NC-MossWall-NaturaHQ-16x12k.jpg",
+            "description": "Fresh And Beautifull Wall",
+            "_ownerId": "94"
+        }
+    ]
+}

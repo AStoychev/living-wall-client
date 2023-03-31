@@ -1,13 +1,13 @@
 
 import React from 'react';
+import { useWallContext } from '../../contexts/WallContext';
 
 import { useForm } from '../../hooks/useForm';
 
 import '../createWall/CreateEditWall.css';
 
-export const CreateWall = ({
-    onCreateWallSubmit,
-}) => {
+export const CreateWall = () => {
+    const { onCreateWallSubmit } = useWallContext()
     const {values, changeHandler, onSubmit} = useForm({
         title: '',
         category: '',
@@ -31,10 +31,10 @@ export const CreateWall = ({
                         <input value={values.category} onChange={changeHandler} type="category" name="category" id="add-category" placeholder="Wall" />
 
                         <label htmlFor="price">Price:</label>
-                        <input value={values.price} onChange={changeHandler} type="price" name="price" id="price" placeholder="0.00" />
+                        <input value={values.price} onChange={changeHandler} type="number" name="price" id="price" placeholder="0.00" />
 
                         <label htmlFor="imageUrl">Image:</label>
-                        <input value={values.imageUrl} onChange={changeHandler} type="imageUrl" id="imageUrl" name="imageUrl" placeholder="https://..." />
+                        <input value={values.imageUrl} onChange={changeHandler} type="url" id="imageUrl" name="imageUrl" placeholder="https://..." />
 
                         <label htmlFor="description">Description:</label>
                         {/* <input value={values.description} type="description" id="description" name="description" placeholder="Describe the product" /> */}

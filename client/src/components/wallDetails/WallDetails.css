@@ -3,19 +3,22 @@
     display: block;
     width: 980px;
     margin: 90px auto;
-    overflow: auto;
+    overflow: visible;
     border-radius: 10px;
     transition: all 0.4s;
 }
 
 .info-section>h1 {
-    color: #875252;
+    color: #131d5f;
+    /* color: #875252; */
     font-family: "Agency FB";
     font-size: 55px;
     font-weight: 700;
     margin-bottom: 40px;
     text-transform: uppercase;
     text-align: center;
+    font-family: Lucida Sans;
+    /* font-family: 'fresh', sans-serif; */
 }
 
 .info-section {
@@ -50,11 +53,13 @@
 .price {
     display: inline-block;
     margin-top: 15px;
-    color: #555;
+    color: #5dff52;
     padding: 7px;
     border-radius: 5px;
-    background-color: #b4b6ee;
-    border: 1px solid rgba(218, 181, 181, 0.829);
+    background-color: #b5b8fa;
+    font-size: 20px;
+    /* background-color: #b4b6ee; */
+    /* border: 1px solid rgba(218, 181, 181, 0.829); */
 }
 
 .category {
@@ -108,31 +113,79 @@
     height: 10%;
     text-align: right;
     padding-right: 15px;
-    padding-bottom: 40px;
+    padding-bottom: 15px;
 }
 
-.button {
+.buttonEdit {
     height: 15%;
-    background-color: #54557b;
+    background-color: #7a7ef0; 
+    /* background-color: #54557b;  */
     padding: 14px;
+    margin: 1px;
+    border-radius: 23px;
     margin-top: auto;
     font-size: 21px;
     color: rgb(255, 255, 255);
 }
 
-.button:hover {
-    background-color: #6f5d9c;
+.buttonEdit:hover {
+    background-color: #00b3ff;
+    /* background-color: #6f5d9c; */
     color: white;
 }
 
+.buttonDelete {
+    height: 15%;
+    background-color: #7a7ef0; 
+    /* background-color: #54557b;  */
+    padding: 14px;
+    border-radius: 23px;
+    margin-top: auto;
+    font-size: 21px;
+    color: rgb(255, 255, 255);
+}
+
+.buttonDelete:hover {
+    background-color: #00b3ff;
+    /* background-color: #6f5d9c; */
+    color: white;
+}
+
+/* .divButtonComment {
+    padding-bottom: 10px;
+} */
+
+.buttonComment {
+    height: 15;
+    background-color: #7a7ef0; 
+    /* background-color: #54557b;  */
+    padding: 14px;
+    margin-right: 87%;
+    border-radius: 23px;
+    margin-top: auto;
+    font-size: 21px;
+    color: rgb(255, 255, 255);
+}
+
+.buttonComment:hover {
+    background-color: #00b3ff;
+    /* background-color: #6f5d9c; */
+    color: white;
+}
 
 .create-comment>.form>textarea {
     resize: none;
-    width: 398px;
-    height: 100px;
-    margin-top: 22px;
-    margin-bottom: 28px;
+    width: 598px;
+    height: 150px;
+    margin-top: 12px;
+    margin-bottom: -1px;
+    margin-left: 35px;
     padding: 5px;
+    background-color: #f8f8f8;
+    /* background-color: #8fd9f9; */
+    border: 2px solid #ccc;
+    border-radius: 10px;
+    font-size: 16px;
 }
 
 .details-comments {
@@ -140,7 +193,9 @@
 }
 
 .create-comment {
-    /* margin-top: 1px; */
+    margin-left: -40%;
+    margin-top: -1px;
+    margin-bottom: -1px;
     position: relative;
     text-align: center;
     width: 743px;
@@ -153,9 +208,11 @@
 }
 
 .create-comment>label {
-    color: rgb(255, 255, 255);
+    color: #7a7ef0;
+    /* color: rgb(255, 255, 255); */
     font-size: 28px;
     text-align: center;
+    margin-top: -30px;
     padding: 15px;
     font-weight: 700;
     line-height: normal;
@@ -169,7 +226,8 @@
     box-shadow: 8px 8px 8px 0 rgba(0, 0, 0, 0.2), 12px 12px 20px 0 rgba(0, 0, 0, 0.19);
     border-radius: 16px;
     margin-left: 60px;
-    background: #6f5d9c;
+    background: #7a7ef0;
+    /* background: #6f5d9c; */
     color: white;
 }
 
@@ -186,7 +244,7 @@
 
 .btn.submit {
     margin-top: 50px;
-    margin-left: 20%;
+    margin-left: 0%;
     background: #778e9c;
     border-radius: 20px;
     color: white;
@@ -195,4 +253,18 @@
     font-weight: 900;
     box-shadow: 6px 6px 6px #ced1cb, -6px -6px 6px white;
     transition: 0.5s;
+}
+
+.close-button {
+    margin-left: -30%;
+    margin-right: -10px;
+    width: 100%px;
+    background-color: rgb(128, 109, 147);
+    border-radius: 10px;
+}
+
+.closeButtonX {
+    margin-left: 100%;
+    margin-top: -60px;
+    border-radius: 10px;
 }

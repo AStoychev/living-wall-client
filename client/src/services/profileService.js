@@ -1,24 +1,26 @@
+// Not use
+
 import { requestFactory } from "./requester";
 
-const baseUrl = 'http://localhost:3030/data/walls';
+const baseUrl = `http://localhost:3030/users`;
 
-export const wallServiceFactory = (token) => {
+export const userServiceFactory = (token) => {
     const request = requestFactory(token);
 
     const getAll = async () => {
         const result = await request.get(baseUrl);
-        const walls = Object.values(result);
+        const user = Object.values(result);
     
-        return walls;
+        return user;
     };
     
-    const getOne = async (wallId) => {
-        const result = await request.get(`${baseUrl}/${wallId}`);
+    const getOne = async (userId) => {
+        const result = await request.get(`${baseUrl}/${userId}`);
 
 
         // Try storage
         let lastname = localStorage.getItem("auth");
-        console.log(11111, lastname)
+        console.log(11111111111111, lastname)
         // Try storage
 
         console.log(result);
@@ -26,8 +28,8 @@ export const wallServiceFactory = (token) => {
         return result
     }
     
-    const create = async (wallData) => {
-        const result = await request.post(baseUrl, wallData);
+    const create = async (userData) => {
+        const result = await request.post(baseUrl, userData);
     
         console.log(result);
     
@@ -40,9 +42,9 @@ export const wallServiceFactory = (token) => {
     //     return result;
     // };
 
-    const edit = (wallId, data) => request.put(`${baseUrl}/${wallId}`, data);
+    const edit = (userId, data) => request.put(`${baseUrl}/${userId}`, data);
 
-    const deleteWall = (wallId) => request.delete(`${baseUrl}/${wallId}`);
+    const deleteUser = (userId) => request.delete(`${baseUrl}/${userId}`);
 
     return {
         getAll,
@@ -50,6 +52,6 @@ export const wallServiceFactory = (token) => {
         create,
         edit,
         // addComment,
-        delete: deleteWall,
+        delete: deleteUser,
     };
 }

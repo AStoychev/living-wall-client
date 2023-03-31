@@ -98,6 +98,7 @@ input[type="password"],
 input[type="number"],
 input[type="email"],
 input[type="username"],
+input[type="description"],
 input[type="imageUrl"] {
     background: #ecf0f3;
     padding: 1px;

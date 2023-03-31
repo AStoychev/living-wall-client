@@ -1,11 +1,15 @@
 import { useAuthContext } from '../../contexts/AuthContext';
 import { useForm } from '../../hooks/useForm';
 
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 // import ReactDOM from 'react-dom/client';
 import './LoginRegister.css';
 
 import { Link } from 'react-router-dom';
+
+// Try errorhandling
+import { AuthProvider } from '../../contexts/AuthContext';
+// Try errorhandling
 
 const LoginFormKeys = {
     Email: 'email',
@@ -13,11 +17,16 @@ const LoginFormKeys = {
 };
 
 export const Login = () => {
+    // Try error
+
+    // Try error
+
     const { onLoginSubmit } = useAuthContext();
     const { values, changeHandler, onSubmit } = useForm({
         [LoginFormKeys.Email]: '',
         [LoginFormKeys.Password]: '',
     }, onLoginSubmit);
+
 
     return (
         <div className="container">

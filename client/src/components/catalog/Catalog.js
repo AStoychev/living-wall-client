@@ -5,10 +5,10 @@ import { CatalogItem } from './CatalogItem/CatalogItem';
 import { AuthContext } from '../../contexts/AuthContext';
 
 import './Catalog.css';
+import { useWallContext } from '../../contexts/WallContext';
 
-export const Catalog = ({
-   walls
-}) => {
+export const Catalog = () => {
+   const { walls } = useWallContext();
    const { isAuthenticated } = useContext(AuthContext);
 
    const addNavigate = useNavigate();

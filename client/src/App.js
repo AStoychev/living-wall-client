@@ -1,13 +1,17 @@
 import { Routes, Route, useNavigate } from 'react-router-dom';
-import { useState, useEffect } from 'react';
 
-import {wallServiceFactory} from './services/wallService'
 import { withAuth } from './hoc/withAuth';
+
+// import CustomErrorBoundary from './components/CustomErrorBoundary/customErrorBoundary';
 
 // import * as wallService from './services/wallService';
 import { AuthProvider } from './contexts/AuthContext';
+import { WallProvider } from './contexts/WallContext';
 
 import { useService } from './hooks/useService';
+
+import { Profile } from './components/profile/Profile';
+import { EditProfile } from './components/profile/EditProfile';
 
 import { Header } from './components/header/Header';
 import { Footer } from './components/footer/Footer';
@@ -20,65 +24,77 @@ import { Contact } from './components/contact/Contact';
 import { Catalog } from './components/catalog/Catalog';
 import { CreateWall } from './components/createWall/CreateWall';
 import { EditWall } from './components/editWall/EditWall';
+import { DeleteModal } from './components/wallDetails/DeleteModal';
 import { WallDetails } from './components/wallDetails/WallDetails';
 
 import './App.css';
+import { RouteGuard, PublicRouteGuard } from './components/common/RouteGuard';
+import { WallOwner } from './components/common/WallOwner';
 
 function App() {
-    const navigate = useNavigate();
-    const [walls, setWalls] = useState([]);
-    const wallService = wallServiceFactory(); //auth.accessToken
-
-    useEffect(() => {
-        wallService.getAll()
-            .then(result => {
-                setWalls(result)
-            })
-    }, []);
-
-    const onCreateWallSubmit = async (data) => {
-        const newWall = await wallService.create(data);
-
-        setWalls(state => [...state, newWall])
-
-        navigate('/catalog')
-    };
-
-    const onWallEditSubmit = async (values) => {
-        const result = await wallService.edit(values._id, values);
-
-        setWalls(state => state.map(x => x._id === values._id ? result : x))
-
-        navigate(`/catalog/${values._id}`)
-    }
 
     // not use
     // const EnchancedLogin = withAuth(Login);
 
     return (
         <AuthProvider>
-            <Header />
-            <div style={{ padding: "-1px" }}>
-                <main className="main">
-                    <Routes>
-                        <Route path='/' element={<Section />} />
-                        <Route path='/login' element={<Login />} />     {/* We can use EnchancedLogin. This can do the same performance like Login. For sample only.*/}
-                        <Route path='/logout' element={<Logout />} />
-                        <Route path='/register' element={<Register />} />
-                        <Route path='/about' element={<About />} />
-                        <Route path='/contact' element={<Contact />} />
-                        <Route path='/catalog' element={<Catalog walls={walls} />} />
+            <WallProvider>
+                <Header />
 
-                        <Route path='/createWall' element={<CreateWall onCreateWallSubmit={onCreateWallSubmit} />} />
+                {/* <CustomErrorBoundary> */}
 
-                        <Route path='/catalog/:wallId' element={<WallDetails />} />
-                        <Route path='/catalog/:wallId/edit' element={<EditWall onWallEditSubmit={onWallEditSubmit} />} />
-                    </Routes>
-                </main>
-            </div>
-            <Footer />
+                    <div style={{ padding: "-1px" }}>
+                        <main className="main">
+                            <Routes>
+                                <Route path='/' element={<Section />} />
+
+                                <Route element={<PublicRouteGuard />}>
+                                    <Route path='/login' element={<Login />} />     {/* We can use EnchancedLogin. This can do the same performance like Login. For sample only.*/}
+                                    <Route path='/register' element={<Register />} />
+                                </Route>
+
+                                <Route path='/about' element={<About />} />
+                                <Route path='/contact' element={<Contact />} />
+                                <Route path='/catalog' element={<Catalog />} />
+
+                                <Route element={<RouteGuard />}>
+                                    <Route path='/profile/:userId' element={<Profile />} />
+                                    <Route path='/profile/editProfile' element={<EditProfile />} />
+
+                                    <Route path='/createWall' element={<CreateWall />} />
+                                    <Route path='/logout' element={<Logout />} />
+
+                                    <Route path='/catalog/:wallId/edit' element={
+                                        <WallOwner>
+                                            <EditWall />
+                                            {/* <DeleteModal /> */}
+                                        </WallOwner>
+                                    } />
+                                </Route>
+
+                                <Route path='/catalog/:wallId' element={<WallDetails />} />
+                                {/* <Route element={<RouteGuard />}>
+                            <Route path='/catalog/:wallId/edit' element={<EditWall onWallEditSubmit={onWallEditSubmit} />} />
+                        </Route> */}
+
+                            </Routes>
+                        </main>
+                    </div>
+
+                {/* </CustomErrorBoundary> */}
+
+                <Footer />
+            </WallProvider>
         </AuthProvider>
     );
 }
 
 export default App;
+
+
+
+// Variant one
+// <Route path='/createWall' element={<RouteGuard>
+//     <CreateWall onCreateWallSubmit={onCreateWallSubmit} />
+// </RouteGuard>}
+// />

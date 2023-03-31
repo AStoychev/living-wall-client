@@ -1,5 +1,6 @@
 import { useEffect } from 'react';
 import { useParams } from 'react-router-dom';
+import { useWallContext } from '../../contexts/WallContext';
 
 import { useForm } from '../../hooks/useForm';
 import { useService } from '../../hooks/useService';
@@ -7,9 +8,8 @@ import { wallServiceFactory } from '../../services/wallService';
 
 import '../createWall/CreateEditWall.css';
 
-export const EditWall = ({
-    onWallEditSubmit,
-}) => {
+export const EditWall = () => {
+    const { onWallEditSubmit } = useWallContext();
     const { wallId } = useParams();
     const wallService = useService(wallServiceFactory);
     const { values, changeHandler, onSubmit, changeValues } = useForm({
