@@ -82,7 +82,9 @@ label:nth-of-type(2) {
 
 input::placeholder {
     color: rgba(184, 179, 179, 0.678);
-};
+}
+
+;
 
 label[for="female"] {
     margin-top: 10px;
@@ -95,8 +97,7 @@ input[type="url"],
 input[type="number"],
 input[type="title"],
 /* input[type="description"] */
-textarea[type="description"]
- {
+textarea[type="description"] {
     background: #ecf0f3;
     padding: 10px;
     padding-left: 20px;
@@ -128,6 +129,28 @@ label[for="terms"]>input {
 .submit:hover {
     color: white;
     background-color: #0069d9;
+    /* background-color: #268ccb; */
+}
+
+.submit-disabled {
+    margin-top: 60px;
+    opacity: 0.7;
+    background: #0a2b4d;
+    /* background: #7abce5; */
+    height: 50px;
+    border-radius: 20px;
+    color: white;
+    font-size: 26px;
+    cursor: pointer;
+    font-weight: 900;
+    /* box-shadow: 6px 6px 6px #cbced1, -6px -6px 6px white; */
+    transition: 0.5s;
+}
+
+.submit-disabled:hover {
+    color: white;
+    cursor: no-drop;
+    visibility: visible;
     /* background-color: #268ccb; */
 }
 

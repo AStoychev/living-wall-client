@@ -1,7 +1,7 @@
 #login-page {
     position: relative;
     width: 1391;
-    height: 552px;
+    height: 596px;
     /* border-radius: 20px; */
     padding: 10px;
     box-sizing: border-box;
@@ -13,7 +13,7 @@
 #register-page {
     position: relative;
     width: 1391;
-    height: 552px;
+    height: 596px;
     /* border-radius: 20px; */
     padding: 10px;
     box-sizing: border-box;
@@ -86,7 +86,9 @@ label:nth-of-type(2) {
 
 input::placeholder {
     color: rgba(184, 179, 179, 0.678);
-};
+}
+
+;
 
 
 label[for="female"] {
@@ -102,8 +104,9 @@ input[type="description"],
 input[type="imageUrl"] {
     background: #ecf0f3;
     padding: 1px;
+    padding-bottom: 5px;
     padding-left: 20px;
-    height: 45px;
+    height: 50px;
     margin-top: -15px;
     font-size: 20px;
     border-radius: 50px;
@@ -164,3 +167,16 @@ label[for="terms"]>input {
 #fieldHere:hover {
     color: rgba(197, 225, 12, 0.395);
 }
+
+
+/* .field-set-register {
+    width: 100px;
+    height: 100px;
+    border: 10px;
+    border-radius: 10px;
+    text-align: center;
+    border-color: black;
+    background-color: red;
+    opacity: 0.5;
+    margin-left: 80%;
+} */

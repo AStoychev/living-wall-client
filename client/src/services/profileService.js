@@ -20,7 +20,6 @@ export const userServiceFactory = (token) => {
 
         // Try storage
         let lastname = localStorage.getItem("auth");
-        console.log(11111111111111, lastname)
         // Try storage
 
         console.log(result);

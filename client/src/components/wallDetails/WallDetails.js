@@ -1,35 +1,26 @@
-import { useEffect, useState, useReducer } from 'react';
-import { useParams, Link, useNavigate } from 'react-router-dom';
+import { useEffect, useReducer } from 'react';
+import { useParams, Link } from 'react-router-dom';
 
 import { wallServiceFactory } from '../../services/wallService';
 import * as commentService from '../../services/commentService';
 import '../wallDetails/wallComment'
-import { Popup } from '../wallDetails/wallComment';
 import { useService } from '../../hooks/useService';
 import { useAuthContext } from '../../contexts/AuthContext';
-
 import { DeleteModal } from './DeleteModal';
-
-import { AddComment } from './addComment/AddComment';
+import { wallReducer } from '../../reducers/wallReducer';
 
 // Try comment
 import { WallComment } from '../wallDetails/wallComment';
 // Try comment
 
-import { wallReducer } from '../../reducers/wallReducer';
-
-import { useWallContext } from '../../contexts/WallContext';
 import '../wallDetails/WallDetails.css';
 
 export const WallDetails = () => {
     const { wallId } = useParams();
     const { userId, isAuthenticated, userName, userEmail } = useAuthContext();
-    const { deleteWall } = useWallContext();
-    // const [wall, setWall] = useState({});
     const [wall, dispatch] = useReducer(wallReducer, {});
 
     const wallService = useService(wallServiceFactory);
-    const navigate = useNavigate();
 
     useEffect(() => {
         Promise.all([
@@ -43,12 +34,6 @@ export const WallDetails = () => {
 
             dispatch({ type: 'WALL_FETCH', payload: wallState });
 
-            // setWall(wallState);
-
-            // setWall({
-            //     ...wallData,
-            //     comments,
-            // });
         });
     }, [wallId]);
 
@@ -73,7 +58,6 @@ export const WallDetails = () => {
 
                     <div className="wall-header-details">
                         <img className="wall-img-details" src={wall.imageUrl} />
-                        {/* <h1>{wall.title}</h1> */}
                         <span className="price">Price: {wall.price}</span>
                         <p className="category">Category: {wall.category}</p>
                     </div>
@@ -82,7 +66,6 @@ export const WallDetails = () => {
                         Description: {wall.description}
                     </p>
 
-                    {/* <!-- Bonus ( for Guests and Users ) --> */}
                     {isAuthenticated &&
                         <div className="details-comments">
                             <h2>Comments:</h2>
@@ -100,7 +83,6 @@ export const WallDetails = () => {
                         </div>
                     }
 
-                    {/* <!-- Edit/Delete buttons ( Only for creator of this wall )  --> */}
                     <div className="buttons">
                         {isOwner && (
                             <div>
@@ -114,9 +96,6 @@ export const WallDetails = () => {
                     </div>
 
                 </div>
-
-                {/* {isAuthenticated && <AddComment onCommentSubmit={onCommentSubmit} />} */}
-
 
             </section>
 

@@ -35,8 +35,6 @@ export const Profile = () => {
         
     }, [userId]);
     
-    
-    console.log(1111111111, user)
 
     return (
         <>

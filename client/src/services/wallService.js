@@ -15,11 +15,8 @@ export const wallServiceFactory = (token) => {
     const getOne = async (wallId) => {
         const result = await request.get(`${baseUrl}/${wallId}`);
 
-
-        // Try storage
         let lastname = localStorage.getItem("auth");
         console.log(11111, lastname)
-        // Try storage
 
         console.log(result);
     
@@ -33,12 +30,6 @@ export const wallServiceFactory = (token) => {
     
         return result
     };
-    
-    // const addComment = async (wallId, data) => {
-    //     const result = await request.post(`${baseUrl}/${wallId}/comments`, data);
-    
-    //     return result;
-    // };
 
     const edit = (wallId, data) => request.put(`${baseUrl}/${wallId}`, data);
 
@@ -49,7 +40,6 @@ export const wallServiceFactory = (token) => {
         getOne,
         create,
         edit,
-        // addComment,
         delete: deleteWall,
     };
 }

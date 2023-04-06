@@ -13,7 +13,7 @@ export const CatalogItem = ({
             <div className="container_main">
                 <img src={imageUrl} alt="Avatar" className="image" />
                 <div className="overlay">
-                    <Link to={`/catalog/${_id}`} className="icon" title="See">
+                    <Link to={`/catalog/${_id}`} className="icon" title="See" role="details">
                         <i className="fa fa-search"></i>
                     </Link>
                 </div>

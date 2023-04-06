@@ -1,6 +1,6 @@
 // Not use
 
-import React, { useEffect, useState, useReducer } from 'react';
+import React, { useState } from 'react';
 import Modal from 'react-bootstrap/Modal';
 import { Link } from 'react-router-dom';
 import Button from 'react-bootstrap/Button';
@@ -36,34 +36,7 @@ export const WallComment = ({
                         <input className="btn submit" style={{ backgroundColor: "#7a7ef0" }} type="submit" value="Add Comment" onClick={handleClose}/>
                     </form>
                 </article >
-                {/* <Button className='close-button' variant="secondary" onClick={handleClose}>
-                    Close
-                </Button> */}
             </Modal>
         </>
     );
 };
-
-
-
-
-
-
-
-// import React from "react";
-
-// import '../wallDetails/wallComments.css';
-
-// export const Popup = props => {
-//     return (
-//             <div className="overlays">
-//                 <div className="backdrop" onClick={props.handleClose} />
-//                 <div className="popup-box" >
-//                     <div className="box">
-//                         <span className="close-icon" onClick={props.handleClose}>x</span>
-//                         {props.content}
-//                     </div>
-//                 </div>
-//             </div>
-//     );
-// };

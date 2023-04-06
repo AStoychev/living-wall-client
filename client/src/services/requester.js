@@ -12,13 +12,11 @@ const requester = async (method, url, data) => {
         }
     }
 
-    // New try
     const serializedAuth = localStorage.getItem('auth');
 
     if (serializedAuth) {
         const auth = JSON.parse(serializedAuth);
 
-        // token = auth.accessToken;
         if (auth.accessToken) {
             options.headers = {
                 ...options.headers,
@@ -26,15 +24,6 @@ const requester = async (method, url, data) => {
             };
         }
     }
-
-    // New try
-
-    // if (token) {
-    //     options.headers = {
-    //         ...options.headers,
-    //         'X-Authorization': token,
-    //     };
-    // }
     
     const response = await fetch(url, options);
 
@@ -42,14 +31,9 @@ const requester = async (method, url, data) => {
         return {};
     }
 
-    // This is work after refresh
-
-
     if (response.status === 403) {
         window.localStorage.clear()
     }
-    //
-
 
     const result = await response.json();
 

@@ -23,7 +23,6 @@ export const EditProfile = () => {
     // const { onWallEditSubmit } = useAuthContext(); <--- onUserEditSubmit
     const { authId } = useParams();
     const userService = useService(userServiceFactory);
-    console.log("asaasasasasas", authId)
     const { values, changeHandler, onSubmit, changeValues } = useForm({
         _id: '',
         email: '',

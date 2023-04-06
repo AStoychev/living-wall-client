@@ -1,14 +1,14 @@
-import { Routes, Route, useNavigate } from 'react-router-dom';
+import { Routes, Route } from 'react-router-dom';
 
-import { withAuth } from './hoc/withAuth';
+// import { withAuth } from './hoc/withAuth';
 
-// import CustomErrorBoundary from './components/CustomErrorBoundary/customErrorBoundary';
+// import ErrorBoundary from './components/ErrorBoundary/ErrorBoundary';
 
 // import * as wallService from './services/wallService';
 import { AuthProvider } from './contexts/AuthContext';
 import { WallProvider } from './contexts/WallContext';
 
-import { useService } from './hooks/useService';
+// import { useService } from './hooks/useService';
 
 import { Profile } from './components/profile/Profile';
 import { EditProfile } from './components/profile/EditProfile';
@@ -24,7 +24,6 @@ import { Contact } from './components/contact/Contact';
 import { Catalog } from './components/catalog/Catalog';
 import { CreateWall } from './components/createWall/CreateWall';
 import { EditWall } from './components/editWall/EditWall';
-import { DeleteModal } from './components/wallDetails/DeleteModal';
 import { WallDetails } from './components/wallDetails/WallDetails';
 
 import './App.css';
@@ -33,15 +32,12 @@ import { WallOwner } from './components/common/WallOwner';
 
 function App() {
 
-    // not use
-    // const EnchancedLogin = withAuth(Login);
-
     return (
         <AuthProvider>
             <WallProvider>
-                <Header />
+                    <Header />
 
-                {/* <CustomErrorBoundary> */}
+                    {/* <CustomErrorBoundary> */}
 
                     <div style={{ padding: "-1px" }}>
                         <main className="main">
@@ -67,34 +63,22 @@ function App() {
                                     <Route path='/catalog/:wallId/edit' element={
                                         <WallOwner>
                                             <EditWall />
-                                            {/* <DeleteModal /> */}
                                         </WallOwner>
                                     } />
                                 </Route>
 
                                 <Route path='/catalog/:wallId' element={<WallDetails />} />
-                                {/* <Route element={<RouteGuard />}>
-                            <Route path='/catalog/:wallId/edit' element={<EditWall onWallEditSubmit={onWallEditSubmit} />} />
-                        </Route> */}
 
                             </Routes>
                         </main>
                     </div>
 
-                {/* </CustomErrorBoundary> */}
+                    {/* </CustomErrorBoundary> */}
 
-                <Footer />
+                    <Footer />
             </WallProvider>
         </AuthProvider>
     );
 }
 
 export default App;
-
-
-
-// Variant one
-// <Route path='/createWall' element={<RouteGuard>
-//     <CreateWall onCreateWallSubmit={onCreateWallSubmit} />
-// </RouteGuard>}
-// />

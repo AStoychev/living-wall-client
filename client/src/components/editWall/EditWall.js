@@ -28,12 +28,23 @@ export const EditWall = () => {
             });
     }, [wallId]);
 
+    const isFull = () => {
+        if ((values.title).length === 0 || (values.category).length === 0 || (values.price).length === 0
+            || (values.imageUrl).length === 0 || (values.description).length === 0) {
+            return false
+        } else {
+            return true
+        }
+    }
+
+    isFull()
+
+
     return (
         <div className="container">
             <section id="create-wall" className="content auth">
                 <form id="create" method='POST' onSubmit={onSubmit}>
                     <div className="container">
-                        {/* <div className="brand-logo"></div> */}
                         <h1>Edit Item</h1>
 
                         <label htmlFor="title">Title:</label>
@@ -73,7 +84,6 @@ export const EditWall = () => {
                         />
 
                         <label htmlFor="description">Description:</label>
-                        {/* <input value={values.description} type="description" id="description" name="description" placeholder="Describe the product" /> */}
                         <textarea
                             type="description"
                             id="description"
@@ -83,8 +93,11 @@ export const EditWall = () => {
                             style={{ padding: "10px", paddingLeft: "20px", height: "70px", marginTop: "-15px", fontSize: "24px", borderRadius: "50px" }}>
                         </textarea>
 
-                        <input className="submit" type="submit" value="Edit" />
-
+                        {isFull() === true ?
+                            <input className="submit" type="submit" value="Edit" />
+                            :
+                            <input className="submit-disabled" type="submit" value="Edit" title="You have to fill all fields!" disabled />
+                        }
                     </div>
                 </form>
             </section>

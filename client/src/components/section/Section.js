@@ -1,5 +1,6 @@
 import Carousel from 'react-bootstrap/Carousel';
 import Button from 'react-bootstrap/Button';
+import { Link } from 'react-router-dom';
 
 export const Section = () => {
     return (
@@ -12,12 +13,14 @@ export const Section = () => {
                         alt="First slide"
                     />
                     <Carousel.Caption>
-                        <p style={{ marginBottom: "50px", fontSize: 50, fontFamily: "Georgia", letterSpacing: "1px", fontWeight: "900px"}}>Design</p>
-                        <p style={{ marginBottom: "170px", fontSize: 50, fontFamily: "Georgia", letterSpacing: "1px", fontWeight: "900px"}}>Of Living Wall</p>
+                        <p style={{ marginBottom: "50px", fontSize: 50, fontFamily: "Georgia", letterSpacing: "1px", fontWeight: "900px" }}>Design</p>
+                        <p style={{ marginBottom: "170px", fontSize: 50, fontFamily: "Georgia", letterSpacing: "1px", fontWeight: "900px" }}>Of Living Wall</p>
                         <div className="mb-2">
-                            <Button variant="primary" size="lg">
-                                More
-                            </Button>{' '}
+                            <Link to='/catalog'>
+                                <Button variant="primary" size="lg">
+                                    More
+                                </Button>{' '}
+                            </Link>
                         </div>
                     </Carousel.Caption>
                 </Carousel.Item>
@@ -32,9 +35,11 @@ export const Section = () => {
                         <p style={{ marginBottom: "50px", fontSize: 50, fontFamily: "Georgia", letterSpacing: "1px", fontWeight: "900px" }}>Design</p>
                         <p style={{ marginBottom: "170px", fontSize: 50, fontFamily: "Georgia", letterSpacing: "1px", fontWeight: "900px" }}>Of Living Wall</p>
                         <div className="mb-2">
-                            <Button variant="primary" size="lg">
-                                More
-                            </Button>{' '}
+                            <Link to='/catalog'>
+                                <Button variant="primary" size="lg">
+                                    More
+                                </Button>{' '}
+                            </Link>
                         </div>
                     </Carousel.Caption>
                 </Carousel.Item>
@@ -42,24 +47,19 @@ export const Section = () => {
                     <img
                         className="d-block w-100"
                         src="../images/moss_wall3.jpg"
-                        //   src="holder.js/800x400?text=Third slide&bg=20232a"
                         alt="Third slide"
                     />
 
                     <Carousel.Caption>
                         <p style={{ marginBottom: "50px", fontSize: 50, fontFamily: "Georgia", letterSpacing: "1px", fontWeight: "900px" }}>Design</p>
                         <p style={{ marginBottom: "170px", fontSize: 50, fontFamily: "Georgia", letterSpacing: "1px", fontWeight: "900px" }}>Of Living Wall</p>
-                        {/* <p style={{ fontSize: 50 }}>Design</p>
-                        <p style={{ padding: "86px", fontSize: 50 }}>Of Living Wall</p> */}
                         <div className="mb-2">
-                            <Button variant="primary" size="lg">
-                                More
-                            </Button>{' '}
+                            <Link to='/catalog'>
+                                <Button variant="primary" size="lg">
+                                    More
+                                </Button>{' '}
+                            </Link>
                         </div>
-                        {/* <h3>Third slide label</h3>
-                        <p>
-                            Praesent commodo cursus magna, vel scelerisque nisl consectetur.
-                        </p> */}
                     </Carousel.Caption>
                 </Carousel.Item>
             </Carousel>

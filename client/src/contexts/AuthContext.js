@@ -4,11 +4,11 @@ import { useLocalStorage } from '../hooks/useLocalStorage';
 
 import { authServiceFactory } from '../services/authService';
 
+// Handling
+
+// Handling
+
 export const AuthContext = createContext();
-
-// Handling
-
-// Handling
 
 export const AuthProvider = ({
     children,
@@ -18,6 +18,7 @@ export const AuthProvider = ({
 
     // Try error
     const [errors, setError] = useState({});
+    const [errorEmail, setErrorEmail] = useState({});
     // Try error
 
     const authService = authServiceFactory(auth.accessToken);
@@ -30,10 +31,11 @@ export const AuthProvider = ({
 
         } catch (error) {
             console.log('There is a problem')
-            console.error(11111, error)
+            setError(error)
+
         }
     };
-    
+
 
     const onRegisterSubmit = async (values) => {
         const { confirmPassword, ...registerData } = values;
@@ -50,6 +52,8 @@ export const AuthProvider = ({
 
         } catch (error) {
             console.log('There is a problem')
+            setErrorEmail(error)
+
         }
 
     };
@@ -63,7 +67,7 @@ export const AuthProvider = ({
         localStorage.removeItem('auth');
         // Try logout
     };
-    
+
     const contextValues = {
         onLoginSubmit,
         onRegisterSubmit,
@@ -73,6 +77,9 @@ export const AuthProvider = ({
         userEmail: auth.email,
         userName: auth.username,
         isAuthenticated: !!auth.accessToken,
+
+        thisError: errors,
+        errorEmail: errorEmail,
     };
     return (
         <>

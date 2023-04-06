@@ -16,7 +16,7 @@ export const Header = () => {
                         <div className="full">
                            <div className="center-desk">
                               <div className="logo">
-                                 <Link to="/"><img src="images/logo.png" alt="#" /></Link>
+                                 <Link to="/"><img src="images/logo.png" alt="logo" /></Link>
                               </div>
                            </div>
                         </div>
@@ -61,7 +61,6 @@ export const Header = () => {
                                           <Link className="nav-link" to="/logout">Logout</Link>
                                        </li>
                                        <Link className="nav-link-span" to={`/profile/${userId}`} >{userName ? userName : userEmail}</Link>
-                                       {/* <span className="nav-link-span">{userName ? userName : userEmail}</span> */}
                                     </>
                                  )}
 

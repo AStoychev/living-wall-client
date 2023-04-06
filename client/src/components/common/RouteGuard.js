@@ -26,28 +26,3 @@ export const PublicRouteGuard = ({
     
     return children ? children : <Outlet />
 };
-
-// export const RouteGuard = () => {
-//     const { isAuthenticated } = useAuthContext();
-
-//     if (!isAuthenticated) {
-//         return <Navigate to="/login" />
-//     }
-
-//     return <Outlet />
-// }
-
-// export const RouteGuard = ({
-//     children
-// }) => {
-//     const { isAuthenticated } = useAuthContext();
-
-//     if (!isAuthenticated) {
-//         return <Navigate to='/login' />
-//     }
-//     return (
-//         <>
-//             {children}
-//         </>
-//     );
-// };
