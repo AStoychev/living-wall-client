@@ -8,7 +8,7 @@
     transition: all 0.4s;
 }
 
-.info-section>h1 {
+.profile {
     color: #131d5f;
     /* color: #875252; */
     font-family: "Agency FB";
@@ -16,6 +16,7 @@
     font-weight: 700;
     margin-top: 1%;
     margin-bottom: 40px;
+    padding-top: 5%;
     text-transform: uppercase;
     text-align: center;
     font: italic small-caps bold 35px/1px Georgia, serif;
@@ -248,7 +249,7 @@
     box-shadow: 8px 8px 8px 0 rgba(0, 0, 0, 0.2), 12px 12px 20px 0 rgba(0, 0, 0, 0.19);
     border-radius: 16px;
     margin-left: 60px;
-    background: #339ca3;
+    background: #9b81ae;
     /* background: #7a7ef0; */
     /* background: #6f5d9c; */
     color: white;

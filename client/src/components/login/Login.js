@@ -1,26 +1,14 @@
 import { useAuthContext } from '../../contexts/AuthContext';
 import { useForm } from '../../hooks/useForm';
 
-import React, { useState, useEffect } from 'react';
-// import ReactDOM from 'react-dom/client';
+import React from 'react';
 import './LoginRegister.css';
 
 import { Link } from 'react-router-dom';
 
-import { FullFieeldValidation } from '../../services/fullFieldValidation';
-
-// Try errorhandling
-import { AuthProvider } from '../../contexts/AuthContext';
-import { authServiceFactory } from '../../services/authService';
-import { useLocalStorage } from '../../hooks/useLocalStorage';
-
-import { toast } from 'react-toastify';
-import { ToastContainer } from 'react-toastify';
+// Try error handling
 import 'react-toastify/dist/ReactToastify.css';
-
-import { useContext } from 'react';
-import { AuthContext } from '../../contexts/AuthContext';
-// Try errorhandling
+// Try error handling
 
 const LoginFormKeys = {
     Email: 'email',
@@ -35,7 +23,6 @@ export const Login = () => {
 
     }, onLoginSubmit);
 
-    // Disable form
     const isRequired = []
     const items = (Object.values(values));
 
@@ -53,52 +40,16 @@ export const Login = () => {
         }
     }
 
-    // Disable form
-    // const [errors, setErrors] = useState(0)
-    // let { thisError } = useContext(AuthContext);
     const { thisError } = useAuthContext()
-    // console.log(33333333, Object.values(thisError).length)
-
-    // useEffect(() => {
-    //     if (Object.values(thisError).length > 0) {
-    //         console.log("Have error!")
-    //         toast.error("Have error!")
-    //         toast("Wow so easy!")
-    //     }
-    // })
 
     let count = 0
-    // const onInputBlur = (e) => {
-    //     count = 0
-    // }
-
-    const onClickInput = () => {
-        count = 0
-        return count
-    }
 
     const checkForErrors = () => {
         if (Object.values(thisError).length > 0) {
             count = 1
             return count
         } 
-
-        // if (count == 1) {
-        //     setTimeout(() => {
-        //         count - 1;
-        //     }, 1000);
-        //     return count
-        // }
     }
-
-
-    // const errorShow = () => {
-    //     setTimeout(() => {
-    //         setCounter(1);
-    //     }, 1000);
-    // }
-
-    // console.log(33333, thisError)
 
     return (
         <div className="container">
@@ -106,7 +57,6 @@ export const Login = () => {
                 <form id="login" method='POST' onSubmit={onSubmit} >
 
                     <div style={{ color: "red" }} className="container">
-                        {/* <div className="brand-logo"></div> */}
                         <h1>Login</h1>
                         <label className='htmlContent' htmlFor="email">Email:</label>
                         <input
@@ -116,7 +66,6 @@ export const Login = () => {
                             name={LoginFormKeys.Email}
                             value={values[LoginFormKeys.Email]}
                             onChange={changeHandler}
-                            // onClick={onClickInput}
                         />
 
                         <label className='htmlContent' htmlFor="login-pass">Password:</label>
@@ -152,5 +101,3 @@ export const Login = () => {
         </div>
     );
 }
-
-// ReactDOM.render(<Login />, document.getElementById('root'));

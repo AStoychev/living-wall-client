@@ -19,7 +19,7 @@ export const CatalogItem = ({
                 </div>
             </div>
             <h3 className="temper_text">{title}</h3>
-            <p className="dololr_text">{description} </p>
+            {/* <p className="dololr_text">{description} </p> */}
         </div>
     )
 }

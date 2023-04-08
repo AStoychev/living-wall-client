@@ -54,6 +54,15 @@ export const WallDetails = () => {
         <>
             <section className="wall-details">
                 <div className="info-section">
+                    <div className="buttonsEditDelete">
+                        {isOwner && (
+                            <div>
+                                <Link to={`/catalog/${wall._id}/edit`} className="buttonEdit">Edit</Link>
+                                <DeleteModal />
+                            </div>
+                        )}
+                    </div>
+
                     <h1>{wall.title}</h1>
 
                     <div className="wall-header-details">
@@ -78,18 +87,18 @@ export const WallDetails = () => {
                             </ul>
 
                             {!wall.comments?.length && (
-                                <p className="no-comment">No comments.</p>
+                                <p className="no-comment">No comments yet.</p>
                             )}
                         </div>
                     }
 
                     <div className="buttons">
-                        {isOwner && (
+                        {/* {isOwner && (
                             <div>
                                 <Link to={`/catalog/${wall._id}/edit`} className="buttonEdit">Edit</Link>
                                 <DeleteModal />
                             </div>
-                        )}
+                        )} */}
                         <div >
                             {isAuthenticated && <WallComment onCommentSubmit={onCommentSubmit} />}
                         </div>

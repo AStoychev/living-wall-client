@@ -216,11 +216,11 @@ export const Register = () => {
                                     {isEqual() === true ?
 
                                         <p >
-                                            <span style={{ color: "blue", margin: "35%", paddingLeft: "10%" }}>Password match!</span>
+                                            <span style={{ color: "blue", margin: "35%", paddingLeft: "10%", paddingBottom: "10%"}}>Password match!</span>
                                         </p>
                                         :
                                         <p >
-                                            <span style={{ color: "red", margin: "35%", paddingLeft: "10%" }}>Password mismatch!</span>
+                                            <span style={{ color: "red", margin: "35%", paddingLeft: "10%", paddingBottom: "10%"}}>Password mismatch!</span>
                                         </p>
                                     }
                                 </>
@@ -234,9 +234,9 @@ export const Register = () => {
 
                             {isFull() === true && isEqual() === true &&
                                 emailValidation(values.email) === true && usernameValidation(values.username) === true ?
-                                <input className="submit" type="submit" value="Create" style={{marginTop: "41px"}} />
+                                <input className="submit" type="submit" value="Create" style={{marginTop: "21px"}} />
                                 :
-                                <input className="submit-disabled" type="submit" value="Create" style={{marginTop: "11px"}} title="You have to fill all fields!" disabled />
+                                <input className="submit-disabled" type="submit" value="Create" style={{marginTop: "21px"}} title="You have to fill all fields!" disabled />
                             }
 
                         </div>

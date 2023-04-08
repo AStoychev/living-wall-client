@@ -26,7 +26,8 @@ import { CreateWall } from './components/createWall/CreateWall';
 import { EditWall } from './components/editWall/EditWall';
 import { WallDetails } from './components/wallDetails/WallDetails';
 
-import './App.css';
+
+// import './App.css';
 import { RouteGuard, PublicRouteGuard } from './components/common/RouteGuard';
 import { WallOwner } from './components/common/WallOwner';
 

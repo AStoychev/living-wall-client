@@ -5,7 +5,6 @@ import { useLocalStorage } from '../hooks/useLocalStorage';
 import { authServiceFactory } from '../services/authService';
 
 // Handling
-
 // Handling
 
 export const AuthContext = createContext();
@@ -31,7 +30,12 @@ export const AuthProvider = ({
 
         } catch (error) {
             console.log('There is a problem')
-            setError(error)
+            if (error) {
+                setError(error)
+                setTimeout(() => {
+                    setError({});
+                }, 2000);
+            }
 
         }
     };
@@ -52,7 +56,12 @@ export const AuthProvider = ({
 
         } catch (error) {
             console.log('There is a problem')
-            setErrorEmail(error)
+            if (error) {
+                setErrorEmail(error)
+                setTimeout(() => {
+                    setErrorEmail({})
+                }, 2000);
+            }
 
         }
 

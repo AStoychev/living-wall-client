@@ -16,9 +16,9 @@ export const wallServiceFactory = (token) => {
         const result = await request.get(`${baseUrl}/${wallId}`);
 
         let lastname = localStorage.getItem("auth");
-        console.log(11111, lastname)
+        // console.log(11111, lastname)
 
-        console.log(result);
+        // console.log(result);
     
         return result
     }
@@ -26,7 +26,7 @@ export const wallServiceFactory = (token) => {
     const create = async (wallData) => {
         const result = await request.post(baseUrl, wallData);
     
-        console.log(result);
+        // console.log(result);
     
         return result
     };

@@ -8,6 +8,8 @@ import { requestFactory } from '../../services/requester';
 
 import { useAuthContext } from '../../contexts/AuthContext';
 
+import '../profile/ProfileDetails.css';
+
 export const Profile = () => {
     const { userId } = useParams();
     const { userEmail, userName } = useAuthContext();
@@ -40,10 +42,10 @@ export const Profile = () => {
         <>
             <section className="wall-details">
                 <div className="info-section">
-                    <h1>{userName ? userName : userEmail}</h1>
+                    <h1 className="profile">{userName ? userName : userEmail}</h1>
 
                     <div className="wall-header-details">
-                        <img className="wall-img-details" />
+                        {/* <img className="wall-img-details" /> */}
                         {/* <h1>{wall.title}</h1> */}
                         <span className="price">Email: {userEmail}</span>
                         <p className="category">Occupation: { }</p>

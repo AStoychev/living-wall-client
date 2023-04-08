@@ -92,7 +92,8 @@ a:hover {
   color: #16e816;
   text-transform: uppercase;
   font-weight: bold;
-  padding-top: 35px;
+  padding-top: 5px;
+  margin-bottom: 35px;
 }
 
 .dololr_text {
